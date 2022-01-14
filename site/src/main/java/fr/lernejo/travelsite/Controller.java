@@ -7,26 +7,21 @@ import java.util.ArrayList;
 @RestController
 public class Controller {
 
-    private final ArrayList<Country> countries = new ArrayList<>();
+    private final ArrayList<Travel> cont = new ArrayList<>();
     private final ArrayList<Inscription> insq = new ArrayList<>();
     //Catalog_country catalog_country=new Catalog_country();
     @GetMapping("/api/travels")
-    public ArrayList<Country> getList() {
-        countries.add(new Country("Caribbean", 32.4));
-        countries.add(new Country("Australia", 35.1));
-        return countries;
+    public ArrayList<Travel> getList() {
+        cont.add(new Travel("Caribbean", 32.4));
+        cont.add(new Travel("Australia", 35.1));
+        return cont;
     }
 
     @PostMapping("api/inscription")
-    public void add(@RequestBody Inscription myinscription) {
-        this.insq.add(myinscription);
+    public void add(@RequestBody Inscription myinsc) {
+        this.insq.add(myinsc);
     }
 
-
-    @GetMapping("/api/inscription")
-    public ArrayList<Inscription> getList2() {
-        return insq;
-    }
 
 
 
